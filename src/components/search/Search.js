@@ -16,14 +16,14 @@ class Search extends Component {
     }
     render() {
         return (
-            <div className="container">
+            
                 <Form>
-                    <input type="city" className="form-control" 
-                            id="inputEmail3" placeholder="City" 
+                    <input type="keyword" className="form-control" 
+                            id="inputEmail3" placeholder="Keyword" 
                             onChange={this.onChange}/>              
                     <button type="submit" className="btn btn-primary" onClick={this.onClick}>Search</button>
                 </Form>
-            </div>
+            
         )
     }
 }

@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {Link} from 'react-router-dom';
+
 class Event extends Component {
     
     render() {
@@ -11,14 +13,38 @@ class Event extends Component {
             //     <img src={this.props.image} alt=""/>
             // </div>
             <div className="card">
-            <img className="card-img-top" src={this.props.image} alt=""/>
-            <div className="card-body">
-                <h4 className="card-title">{this.props.title}</h4>
-                <p className="card-text">{this.props.time}</p>
-                <p className="card-text">{this.props.intro}</p>
-                <a href="#!" className="btn btn-primary">Go somewhere</a>
-                
+
+  
+        <div id="carouselFadeExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
+            <div class="carousel-inner" role="listbox">
+                <div class="carousel-item active">
+                <img className="card-img-top" src={this.props.image} alt=""/>
+                </div>
+                <div class="carousel-item">
+                <img className="card-img-top" src={this.props.image} alt=""/>
+                </div>
             </div>
+            <a class="carousel-control-prev" href="#carouselFadeExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselFadeExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+        </div>
+
+
+
+
+              
+                <div className="card-body">
+                    <h4 className="card-title">{this.props.title}</h4>
+                    <p className="card-text">{this.props.time}</p>
+                    <p>{this.props.eventId}</p>
+                    <Link to={`/event/${this.props.eventId}`} className="btn btn-primary">Details</Link>
+                    
+                </div>
             </div>
 
         )
