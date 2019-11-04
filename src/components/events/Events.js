@@ -14,7 +14,7 @@ class Events extends Component {
                         // console.log("intro is :"+ event.promoter.name), 
                         // console.log("time is :"+ event.dates.start.dateTime), 
                          console.log("check key is :"+ event),    
-                        <Col xs={5}>
+                        <Col>
                         <Event className="col" title={event.name} 
                         image={event.images[0].url} 
                         time={event.dates.start.dateTime}
