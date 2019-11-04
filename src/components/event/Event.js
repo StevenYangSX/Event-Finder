@@ -12,7 +12,7 @@ class Event extends Component {
             //     <p>{this.props.time}</p>
             //     <img src={this.props.image} alt=""/>
             // </div>
-            <div className="card">
+            <div className="card card-block">
 
   
         <div id="carouselFadeExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
