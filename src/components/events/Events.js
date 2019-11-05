@@ -13,8 +13,8 @@ class Events extends Component {
                         // console.log("title is :"+ event.name), 
                         // console.log("intro is :"+ event.promoter.name), 
                         // console.log("time is :"+ event.dates.start.dateTime), 
-                         console.log("check key is :"+ event),    
-                        <Col>
+                         
+                        <Col large={8} md={4} sm={4}>
                         <Event className="col" title={event.name} 
                         image={event.images[0].url} 
                         time={event.dates.start.dateTime}
@@ -28,6 +28,7 @@ class Events extends Component {
         )
     }
 }
+
 
 export default Events
 

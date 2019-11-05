@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import {Link} from 'react-router-dom';
 import axios from 'axios';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 class EventDetails extends Component {
     state = {
         event: {},
@@ -25,18 +25,23 @@ class EventDetails extends Component {
    
     
     render() {
-        const {id, name} = this.state.event;
+        
         if(this.state.loading === false) {
             return (
-        
-                <div>
-                    <Link to='/'><button>Back</button></Link>
-                    <p>Event with id:{id}</p>
-                    <p>Time: {this.state.event.dates.start.localTime} {this.state.event.dates.start.localDate}</p>
-                    <p>Location:  {this.state.event._embedded.venues[0].city.name}, {this.state.event._embedded.venues[0].country.name}</p>
-
-                    <a href={this.state.event.url} target="_blank">Go for Tickets</a>
-                </div>
+                <Fragment>
+                    <div className="container">
+                        <Link to='/' className='btn btn-light'>Back to Search</Link>
+                        <div className="card grid-2">
+                            <div className="all-center">
+                                <img src={this.state.event.images[0].url} className='round-img' style={{width: '150px'}} alt=""/>
+                                <h1>{this.state.event.name}</h1>
+                                <p>Time: {this.state.event.dates.start.localTime} {this.state.event.dates.start.localDate}</p>
+                                <p>Location: {this.state.event._embedded.venues[0].address.line1}, {this.state.event._embedded.venues[0].name}, {this.state.event._embedded.venues[0].city.name}, {this.state.event._embedded.venues[0].country.name}</p>
+                                <a href={this.state.event.url} rel="noopener noreferrer" target="_blank">Go for Tickets</a>             
+                            </div>
+                        </div>
+                    </div>
+                </Fragment>     
             )
     
         }else {

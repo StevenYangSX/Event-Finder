@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 class Search extends Component {
     
     state = {
@@ -18,10 +19,10 @@ class Search extends Component {
         return (
             
                 <Form>
-                    <input type="keyword" className="form-control" 
+                    <Form.Control size="sm" type="keyword" className="form-control" 
                             id="inputEmail3" placeholder="Keyword" 
                             onChange={this.onChange}/>              
-                    <button type="submit" className="btn btn-primary" onClick={this.onClick}>Search</button>
+                    <Button className="pull-right" type="submit" variant="dark" onClick={this.onClick}>Search</Button>
                 </Form>
             
         )
