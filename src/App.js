@@ -1,21 +1,20 @@
 import React ,{Fragment, Component}from 'react';
-import axios from 'axios';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Events from './components/events/Events';
-import Search from './components/search/Search';
-import Navbar from './components/layout/Navbar';
+import ShowCase from './components/showCase/ShowCase';
+import Navbar from './components/layout/NavBar';
 import About from './components/pages/About';
 import EventDetails from './components/eventDetails/EventDetails';
 
-//https://app.ticketmaster.com/discovery/v2/events.json?city=vancouver&size=1&apikey=d5jyQtKEHAXiqyDMCSVsdid5ooEqm5Pg
 class App extends Component{
 
   state = {
     event : {},
     events : [],
-    loading: false
+    loading: false,
+    showCase: true
   }
 
   //Function to search all envents from input
@@ -34,7 +33,7 @@ class App extends Component{
       this.setState({events: [...this.state.events, event]})
     ))
 
-    this.setState({loading: false});
+    this.setState({loading: false,showCase: false});
 
     
   }
@@ -44,20 +43,35 @@ class App extends Component{
 
   render() {
     
-    if(this.state.loading === false){
+    if(this.state.loading === false && this.state.showCase === true){
       return (
         <Router>
           <Fragment>
-          <Navbar/>
-            <Switch>
-              
+            <Navbar onClick={this.clickHandler}/>
+            <Switch>  
               <Route exact path="/" render={props => (
-                <Fragment>   
-                <h2>Showcase goes here</h2>
-                <br/>
-                <br/>
-                <br/>
-                <Search onClick={this.clickHandler}/>     
+                <Fragment>  
+                  <ShowCase/>   
+                </Fragment>
+              )}>
+              </Route>
+
+              <Route exact path="/about" component={About}/>
+
+            </Switch>       
+          </Fragment>
+        </Router>
+        );
+    }
+
+    if(this.state.loading === false && this.state.showCase === false){
+      return (
+        <Router>
+          <Fragment>
+          <Navbar onClick={this.clickHandler}/>
+            <Switch>  
+              <Route exact path="/" render={props => (
+                <Fragment>  
                 <Events events={this.state.events}/>
               </Fragment>
               )}>
@@ -74,9 +88,13 @@ class App extends Component{
           </Fragment>
         </Router>
       );
-    }else{
+    }
+    else{
       return (
+        <div>
+        <Navbar onClick={this.clickHandler}/>
         <p>Loading...</p>
+        </div>
       )
       
     }
