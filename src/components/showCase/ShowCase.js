@@ -1,12 +1,18 @@
-import React from 'react'
-import backgroundImg from '../../assets/showcase.jpg';
-const ShowCase = () => {
-    return (
-        <div>
-            <img src={backgroundImg} alt=""/>
+import React from "react"
+import backgroundImg from "../../assets/showcase.jpg"
+import EventsContext from "../../context/events/eventsContext"
 
-        </div>
+const ShowCase = () => {
+  const eventsContext = React.useContext(EventsContext)
+  if (eventsContext.showCase) {
+    return (
+      <div>
+        <img src={backgroundImg} alt="" />
+      </div>
     )
+  } else {
+    return <div></div>
+  }
 }
 
 export default ShowCase

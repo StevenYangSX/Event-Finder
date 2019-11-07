@@ -1,19 +1,10 @@
-import React, { useState } from "react"
+import React, { useContext } from "react"
 import { Navbar, Nav, Form, FormControl, Button } from "react-bootstrap"
 import "bootstrap/dist/css/bootstrap.min.css"
+import EventsContext from "../../context/events/eventsContext"
 
-const NavBar = props => {
-  const [city, setCity] = useState("")
-
-  const onChange = e => {
-    setCity(e.target.value)
-  }
-  const onClick = e => {
-    e.preventDefault()
-    props.onClick(city)
-    setCity("")
-  }
-
+const NavBar = () => {
+  const eventsContext = useContext(EventsContext)
   return (
     <Navbar bg="dark" expand="md" variant="dark">
       <Navbar.Brand href="/">
@@ -25,14 +16,14 @@ const NavBar = props => {
           <Nav.Link href="/">Home</Nav.Link>
           <Nav.Link href="/about">About</Nav.Link>
         </Nav>
-        <Form inline>
+        <Form inline onSubmit={eventsContext.onSubmit}>
           <FormControl
             type="text"
             placeholder="artists"
             className="mr-sm-2"
-            onChange={onChange}
+            onChange={eventsContext.onChange}
           />
-          <Button variant="secondary" onClick={onClick}>
+          <Button type="submit" variant="secondary">
             Search
           </Button>
         </Form>
