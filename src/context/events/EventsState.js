@@ -1,15 +1,7 @@
 import React, { useReducer } from "react"
 import EventsContext from "./eventsContext"
 import EventsReducer from "./eventsReducer"
-import axios from "axios"
-import {
-  SET_EVENTS,
-  SET_LOADING,
-  SET_KEYWORD,
-  SET_SHOWCASE,
-  SET_EVENT,
-  RESET_LOADING
-} from "../types"
+import { SET_EVENTS, SET_LOADING, SET_KEYWORD, SET_SHOWCASE } from "../types"
 
 const EventsState = props => {
   const initialState = {
@@ -39,21 +31,14 @@ const EventsState = props => {
     )
     const res = await response.json()
     setShowCase()
-    dispatch({ type: SET_EVENTS, payload: res._embedded.events })
+    if (res._embedded !== undefined) {
+      dispatch({ type: SET_EVENTS, payload: res._embedded.events })
+    } else {
+      const emptydata = []
+      dispatch({ type: SET_EVENTS, payload: emptydata })
+    }
   }
 
-  const eventDetails = async eventId => {
-    resetLoading()
-    const res = await axios.get(
-      `https://app.ticketmaster.com/discovery/v2/events/${eventId}.json?&apikey=d5jyQtKEHAXiqyDMCSVsdid5ooEqm5Pg`
-    )
-    console.log("IN SET_EVENT, DATA IS:", res.data)
-    dispatch({ type: SET_EVENT, payload: res.data })
-    //setLoading()
-    console.log("check loading status(3):again expected false", state.loading)
-  }
-  //reset loading
-  const resetLoading = () => dispatch({ type: RESET_LOADING })
   //set loading
   const setLoading = () => dispatch({ type: SET_LOADING })
 
@@ -68,8 +53,7 @@ const EventsState = props => {
         showCase: state.showCase,
         keyword: state.keyWord,
         onSubmit,
-        onChange,
-        eventDetails
+        onChange
       }}>
       {props.children}
     </EventsContext.Provider>
