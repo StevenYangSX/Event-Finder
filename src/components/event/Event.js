@@ -1,6 +1,6 @@
-import React from "react"
-import "bootstrap/dist/css/bootstrap.min.css"
-import { Link } from "react-router-dom"
+import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Link } from "react-router-dom";
 
 const Event = ({ image, title, time, eventId }) => {
   return (
@@ -15,7 +15,7 @@ const Event = ({ image, title, time, eventId }) => {
         </Link>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Event
+export default Event;

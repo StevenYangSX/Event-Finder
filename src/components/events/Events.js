@@ -1,12 +1,12 @@
-import React, { useContext } from "react"
-import Event from "../event/Event"
-import "bootstrap/dist/css/bootstrap.min.css"
-import Row from "react-bootstrap/Row"
-import Col from "react-bootstrap/Col"
-import EventsContext from "../../context/events/eventsContext"
+import React, { useContext } from "react";
+import Event from "../event/Event";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import EventsContext from "../../context/events/eventsContext";
 
 const Events = () => {
-  const eventsContext = useContext(EventsContext)
+  const eventsContext = useContext(EventsContext);
   if (eventsContext.events.length > 0) {
     return (
       <Row className="row">
@@ -22,10 +22,10 @@ const Events = () => {
           </Col>
         ))}
       </Row>
-    )
+    );
   } else {
-    return <p></p>
+    return <p></p>;
   }
-}
+};
 
-export default Events
+export default Events;

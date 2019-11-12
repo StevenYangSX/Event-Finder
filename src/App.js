@@ -1,12 +1,12 @@
-import React, { Fragment } from "react"
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
-import "./App.css"
-import "bootstrap/dist/css/bootstrap.min.css"
-import Events from "./components/events/Events"
-import ShowCase from "./components/showCase/ShowCase"
-import Navbar from "./components/layout/NavBar"
-import About from "./components/pages/About"
-import EventDetails from "./components/eventDetails/EventDetails"
+import React, { Fragment } from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Events from "./components/events/Events";
+import ShowCase from "./components/showCase/ShowCase";
+import Navbar from "./components/layout/Navbar";
+import About from "./components/pages/About";
+import EventDetails from "./components/eventDetails/EventDetails";
 
 const App = () => {
   return (
@@ -21,7 +21,7 @@ const App = () => {
         </Switch>
       </Fragment>
     </Router>
-  )
-}
+  );
+};
 
-export default App
+export default App;

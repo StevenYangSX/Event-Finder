@@ -1,10 +1,10 @@
-import React, { useContext } from "react"
-import { Navbar, Nav, Form, FormControl, Button } from "react-bootstrap"
-import "bootstrap/dist/css/bootstrap.min.css"
-import EventsContext from "../../context/events/eventsContext"
+import React, { useContext } from "react";
+import { Navbar, Nav, Form, FormControl, Button } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
+import EventsContext from "../../context/events/eventsContext";
 
 const NavBar = () => {
-  const eventsContext = useContext(EventsContext)
+  const eventsContext = useContext(EventsContext);
   return (
     <Navbar bg="dark" expand="md" variant="dark">
       <Navbar.Brand href="/">
@@ -29,7 +29,7 @@ const NavBar = () => {
         </Form>
       </Navbar.Collapse>
     </Navbar>
-  )
-}
+  );
+};
 
-export default NavBar
+export default NavBar;
