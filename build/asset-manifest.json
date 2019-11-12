@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/Event-Finder/static/css/main.a22034f1.chunk.css",
+    "main.js": "/Event-Finder/static/js/main.bede3c86.chunk.js",
+    "main.js.map": "/Event-Finder/static/js/main.bede3c86.chunk.js.map",
+    "runtime-main.js": "/Event-Finder/static/js/runtime-main.b741af8b.js",
+    "runtime-main.js.map": "/Event-Finder/static/js/runtime-main.b741af8b.js.map",
+    "static/css/2.0624914a.chunk.css": "/Event-Finder/static/css/2.0624914a.chunk.css",
+    "static/js/2.2dc9d4b3.chunk.js": "/Event-Finder/static/js/2.2dc9d4b3.chunk.js",
+    "static/js/2.2dc9d4b3.chunk.js.map": "/Event-Finder/static/js/2.2dc9d4b3.chunk.js.map",
+    "index.html": "/Event-Finder/index.html",
+    "precache-manifest.2d16b5729bd3d18599d015de69ed78d5.js": "/Event-Finder/precache-manifest.2d16b5729bd3d18599d015de69ed78d5.js",
+    "service-worker.js": "/Event-Finder/service-worker.js",
+    "static/css/2.0624914a.chunk.css.map": "/Event-Finder/static/css/2.0624914a.chunk.css.map",
+    "static/css/main.a22034f1.chunk.css.map": "/Event-Finder/static/css/main.a22034f1.chunk.css.map"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b741af8b.js",
+    "static/css/2.0624914a.chunk.css",
+    "static/js/2.2dc9d4b3.chunk.js",
+    "static/css/main.a22034f1.chunk.css",
+    "static/js/main.bede3c86.chunk.js"
+  ]
+}
