@@ -1,4 +1,4 @@
-import React, { Fragment, useContext } from "react"
+import React, { Fragment } from "react"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 import "./App.css"
 import "bootstrap/dist/css/bootstrap.min.css"
@@ -15,7 +15,7 @@ const App = () => {
         <Navbar />
         <ShowCase />
         <Switch>
-          <Route exact path="/" render={props => <Events />}></Route>
+          <Route exact path="/" component={Events} />
           <Route exact path="/about" component={About} />
           <Route exact path="/event/:eventId" component={EventDetails}></Route>
         </Switch>
