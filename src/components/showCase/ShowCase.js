@@ -1,5 +1,5 @@
 import React from "react";
-import backgroundImg from "../../assets/showcase.jpg";
+//import backgroundImg from "../../assets/showcase.jpg";
 import EventsContext from "../../context/events/eventsContext";
 
 const ShowCase = () => {
@@ -7,7 +7,7 @@ const ShowCase = () => {
   if (eventsContext.showCase) {
     return (
       <div>
-        <img src={backgroundImg} alt="" />
+        <h5>Search events.</h5>
       </div>
     );
   } else {

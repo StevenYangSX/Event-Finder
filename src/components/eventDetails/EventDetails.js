@@ -23,6 +23,7 @@ const EventDetails = props => {
 
   useEffect(() => {
     eventDetails(props.match.params.eventId);
+    //eslint-disable-next-line
   }, []);
 
   if (loading === false) {
